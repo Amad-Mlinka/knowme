@@ -104,3 +104,5 @@ export {
   ToastTitle,
   ToastDescription,
 }
+
+export { Toast, ToastTitle, ToastDescription }
