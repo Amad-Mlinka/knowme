@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "@/styles/globals.css";
-import "@/styles/themes.css";
-import { AuthProvider } from "@/components/features/auth/auth-context";
-import { ToastProvider } from "@/components/features/notifications/toast-provider";
+import "./globals.css";
+import { ThemeProvider } from "@/components/common/ThemeProvider";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Know Me - Share Your Story, Connect with the World",
-  description: "Create a beautiful, personalized profile that showcases who you are. Connect with others and build meaningful relationships in the digital age.",
+  title: "KnowMe | Create Your Personal Website",
+  description: "KnowMe lets you build a beautiful, customizable mini-website in minutes.",
 };
 
 export default function RootLayout({
@@ -26,15 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <AuthProvider>
-          <ToastProvider>
-            {children}
-          </ToastProvider>
-        </AuthProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

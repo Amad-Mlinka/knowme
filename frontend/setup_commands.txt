@@ -1,0 +1,13 @@
+# KnowMe Frontend Setup Commands
+
+# 1. Install SCSS support (if not already installed)
+pnpm add -D sass
+
+# 2. Install theme support for light/dark modes
+pnpm add next-themes
+
+# 3. Initialize Shadcn UI in the project root (follow prompts to configure)
+pnpm dlx shadcn-ui@latest init
+
+# 4. Install the Shadcn UI components used in this project
+pnpm dlx shadcn-ui@latest add button input label avatar dropdown-menu 
