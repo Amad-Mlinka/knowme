@@ -102,7 +102,7 @@ export function Showcase() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
           {showcaseItems.map((item, index) => (
             <motion.div
               key={item.name}
@@ -113,7 +113,7 @@ export function Showcase() {
               whileHover={{ y: -10 }}
               className="group"
             >
-              <Card className="overflow-hidden border-2 hover:border-primary/20 transition-all duration-500 bg-background/80 backdrop-blur-sm hover:shadow-2xl">
+              <Card className="overflow-hidden border-2 hover:border-primary/20 transition-all duration-500 bg-background/80 backdrop-blur-sm hover:shadow-2xl h-full flex flex-col">
                 <div className="relative overflow-hidden">
                   <img
                     src={item.image || "/placeholder.svg"}
@@ -141,7 +141,7 @@ export function Showcase() {
                   </div>
                 </div>
 
-                <CardContent className="p-6">
+                <CardContent className="p-6 flex flex-col flex-grow">
                   <div className="flex items-center justify-between mb-3">
                     <Badge variant="outline" className="font-medium">
                       {item.category}
@@ -153,7 +153,7 @@ export function Showcase() {
 
                   <h3 className="font-bold text-lg mb-1">{item.name}</h3>
                   <p className="text-sm text-muted-foreground mb-3">{item.role}</p>
-                  <p className="text-sm mb-4 leading-relaxed">{item.description}</p>
+                  <p className="text-sm mb-4 leading-relaxed line-clamp-3">{item.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {item.tags.map((tag) => (
@@ -163,7 +163,7 @@ export function Showcase() {
                     ))}
                   </div>
 
-                  <div className="text-xs text-muted-foreground font-mono">{item.url}</div>
+                  <div className="text-xs text-muted-foreground font-mono mt-auto">{item.url}</div>
                 </CardContent>
               </Card>
             </motion.div>

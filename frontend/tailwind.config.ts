@@ -11,8 +11,16 @@ const config: Config = {
     "*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "1024px",
+      lg: "1280px",
+      xl: "1536px",
+      "2xl": "1920px",
+    },
 	container: {
 		center: true,
+		padding: "20px",
 	},
   	extend: {
   		colors: {
