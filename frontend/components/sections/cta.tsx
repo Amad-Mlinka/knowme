@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 
 export function CTA() {
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-24 md:py-32 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-purple-600 to-pink-600">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,.1)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px] animate-pulse" />

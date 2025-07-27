@@ -85,7 +85,7 @@ const testimonials: Testimonial[] = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-32 bg-gradient-to-b from-background to-muted/30">
+    <section id="testimonials" className="py-24 md:py-32 bg-gradient-to-b from-background to-muted/30">
       <div className="container">
         <div className="mx-auto max-w-3xl text-center mb-20">
           <motion.div
