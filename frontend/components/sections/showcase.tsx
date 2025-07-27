@@ -77,7 +77,7 @@ const showcaseItems = [
 
 export function Showcase() {
   return (
-    <section id="showcase" className="py-32 bg-gradient-to-b from-background to-muted/30">
+    <section id="showcase" className="py-24 md:py-32 bg-gradient-to-b from-background to-muted/30">
       <div className="container">
         <div className="mx-auto max-w-3xl text-center mb-20">
           <motion.div
