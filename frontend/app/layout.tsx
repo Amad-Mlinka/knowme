@@ -1,39 +1,47 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/components/common/ThemeProvider";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "KnowMe | Create Your Personal Website",
-  description: "KnowMe lets you build a beautiful, customizable mini-website in minutes.",
-};
+  title: "Know Me - Your Digital Identity, Beautifully Crafted",
+  description:
+    "Create stunning, interactive personal websites that showcase your unique story. From portfolios to business cards, build your digital presence with our revolutionary platform.",
+  keywords: "personal website, digital business card, portfolio, online presence, website builder",
+  authors: [{ name: "Know Me Team" }],
+  creator: "Know Me",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://knowme.site",
+    title: "Know Me - Your Digital Identity, Beautifully Crafted",
+    description: "Create stunning personal websites that showcase who you are",
+    siteName: "Know Me",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Know Me - Your Digital Identity, Beautifully Crafted",
+    description: "Create stunning personal websites that showcase who you are",
+    creator: "@knowmeapp",
+  },
+    generator: 'v0.dev'
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header />
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
-          <Footer />
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
